@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+  }
+  
+  /* Desktop side navigation */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px; /* Add padding for the title */
+  }
+  
+  /* Site title for desktop */
+  .desktop-title {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  /* Side nav links */
+  .sidenav a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Bottom section for side nav and mobile menu */
+.sidenav-bottom, .mobile-nav-bottom {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .bottom-logo {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .bottom-text {
+    color: white;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  /* Ensure side nav bottom section sticks to the bottom */
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Ensure mobile nav bottom section sticks to the bottom */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Adjustments for mobile view */
+  @media screen and (max-width: 768px) {
+    .sidenav-bottom {
+      display: none; /* Hide side nav bottom on mobile */
+    }
+  
+    .mobile-nav-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+    }
+  }
+  
+  /* Main content */
+  .content {
+    margin-left: 200px;
+    padding: 30px;
+  }
+  .content h1 {
+    font-size: 60px;
+    color: #04AA6D;
+  }
+  .content h2 {
+    font-size: 40px;
+    color: #04AA6D;
+  }
+  .content h3 {
+    font-size: 38px;
+    color: #04AA6D;
+  }
+  .content p {
+    font-size: 35px;
+    color: #ddd;
+  }
+  .content li {
+    font-size: 35px;
+    color: #ddd;
+  }
+  .content strong {
+    color: #04AA6D;
+  }
+  .content a {
+    color: #FF6000;
+  }
+  .content a:hover {
+    color: #f0bd9d;
+  }
+  
+  /* Hide mobile elements in desktop view */
+  .mobile-header,
+  .mobile-nav {
+    display: none;
+  }
+  
+  /* Mobile view */
+@media screen and (max-width: 768px) {
+    .sidenav {
+      display: none;
+    }
+  
+    /* Sticky mobile header */
+    .mobile-header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #04AA6D;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure it stays above other content */
+    }
+  
+    .left-side {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .toggle-btn {
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  
+    .site-title {
+      margin: 0;
+    }
+  
+    /* Slide-in mobile nav (fixed) */
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #333333;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: left 0.3s ease;
+      z-index: 999; /* Below header */
+    }
+  
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+    }
+  
+    .mobile-nav a:hover {
+      background-color: Black;
+      color: white;
+    }
+  
+    .mobile-nav.active {
+      left: 0;
+    }
+  
+    .close-btn {
+      background-color: transparent;
+      color: white;
+      border: none;
+      font-size: 20px;
+      align-self: flex-end;
+      cursor: pointer;
+      padding: 10px;
+    }
+  
+    /* Ensure content starts below the header */
+    .content {
+      margin-top: 60px; /* Adjust based on the header height */
+      margin-left: 0;
+      padding: 30px;
+    }
+    .content h1 {
+        font-size: 30px;
+      }
+    .content h2 {
+        font-size: 25px;
+      }
+    .content h3 {
+        font-size: 23px;
+      }
+    .content p {
+        font-size: 20px;
+      }
+      .content li {
+        font-size: 20px;
+      }
+      .animated-footer p {
+        font-size: 12px;
+        font-style: italic;
+      }
+  }
+  
+ /* Animated footer */
+.animated-footer {
+    width: 100%;
+    background-color: #111;
+    color: #04AA6D;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-style: italic;
+    position: right; /* Changed from fixed */
+    animation: slideUp 1s ease-out;
+  }
+  
+  /* Footer animation */
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  
